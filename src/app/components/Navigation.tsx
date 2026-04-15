@@ -156,8 +156,7 @@ export function Navigation() {
                         className="mobile-nav-link"
                         onClick={() => setMenuOpen(false)}
                       >
-                        <span>{link.label}</span>
-                        <span aria-hidden="true">↗</span>
+                        {link.label}
                       </Link>
                     ))}
                   </div>
@@ -173,8 +172,7 @@ export function Navigation() {
                         className="mobile-nav-link"
                         onClick={() => setMenuOpen(false)}
                       >
-                        <span>{link.label}</span>
-                        <span aria-hidden="true">↗</span>
+                        {link.label}
                       </Link>
                     ))}
                   </div>

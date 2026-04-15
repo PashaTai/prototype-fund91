@@ -425,7 +425,7 @@
   .mobile-nav-link {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 1rem;
     border: 1px solid var(--fund-line);
     background: rgb(255 255 255 / 0.82);
