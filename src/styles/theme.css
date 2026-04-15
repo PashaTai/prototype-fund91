@@ -1,0 +1,402 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --fund-paper: #eef3ff;
+  --fund-surface: #f9fbff;
+  --fund-surface-muted: #e4e8ff;
+  --fund-ink: #10194b;
+  --fund-muted: #5d6790;
+  --fund-accent: #0507b0;
+  --fund-accent-strong: #04068f;
+  --fund-accent-soft: #d9ddff;
+  --fund-line: rgba(5, 7, 176, 0.12);
+  --fund-deep: #0507b0;
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --page-max: 82rem;
+  --page-max-narrow: 56rem;
+  --page-gutter: clamp(1rem, 2vw + 0.5rem, 2.5rem);
+  --page-offset-top: clamp(7.75rem, 10vw, 9.5rem);
+  --section-space: clamp(4.75rem, 7vw, 7rem);
+  --section-space-tight: clamp(3.5rem, 5vw, 5rem);
+  --stack-sm: clamp(0.75rem, 0.5vw + 0.65rem, 1rem);
+  --stack-md: clamp(1rem, 0.8vw + 0.85rem, 1.5rem);
+  --stack-lg: clamp(1.5rem, 1.4vw + 1.2rem, 2.5rem);
+  --card-pad: clamp(1.25rem, 1vw + 1rem, 1.75rem);
+  --card-pad-lg: clamp(1.5rem, 1.6vw + 1.15rem, 2.5rem);
+  --text-eyebrow: clamp(0.8rem, 0.1vw + 0.78rem, 0.92rem);
+  --text-body: clamp(1rem, 0.12vw + 0.97rem, 1.0625rem);
+  --text-body-lg: clamp(1.125rem, 0.4vw + 1.03rem, 1.375rem);
+  --text-title-card: clamp(1.5rem, 0.85vw + 1.3rem, 2rem);
+  --text-title-section: clamp(2.6rem, 2.1vw + 2rem, 4.35rem);
+  --text-title-display: clamp(3.35rem, 4vw + 2.35rem, 5.85rem);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-family-serif: 'Source Serif 4', Georgia, serif;
+  --font-family-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-fund-paper: var(--fund-paper);
+  --color-fund-surface: var(--fund-surface);
+  --color-fund-surface-muted: var(--fund-surface-muted);
+  --color-fund-ink: var(--fund-ink);
+  --color-fund-muted: var(--fund-muted);
+  --color-fund-accent: var(--fund-accent);
+  --color-fund-accent-strong: var(--fund-accent-strong);
+  --color-fund-accent-soft: var(--fund-accent-soft);
+  --color-fund-line: var(--fund-line);
+  --color-fund-deep: var(--fund-deep);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(125, 132, 238, 0.18), transparent 25%),
+      radial-gradient(circle at top right, rgba(5, 7, 176, 0.08), transparent 24%),
+      linear-gradient(180deg, #f7f9ff 0%, #fbfcff 42%, #f1f5ff 100%);
+    color: var(--fund-ink);
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: var(--text-title-display);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    color: var(--fund-ink);
+  }
+
+  h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: var(--text-title-section);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    color: var(--fund-ink);
+  }
+
+  h3 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: var(--text-title-card);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--fund-ink);
+  }
+
+  h4 {
+    font-size: var(--text-body-lg);
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--fund-ink);
+  }
+
+  p {
+    font-size: var(--text-body);
+    line-height: 1.75;
+  }
+
+  label {
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+
+  section[id],
+  footer[id] {
+    scroll-margin-top: 9rem;
+  }
+
+  img {
+    display: block;
+  }
+
+  ::selection {
+    background: rgba(5, 7, 176, 0.18);
+  }
+}
+
+@layer utilities {
+  .page-shell {
+    width: min(var(--page-max), calc(100% - var(--page-gutter) * 2));
+    margin-inline: auto;
+  }
+
+  .page-shell-narrow {
+    width: min(var(--page-max-narrow), calc(100% - var(--page-gutter) * 2));
+    margin-inline: auto;
+  }
+
+  .page-gutter {
+    padding-inline: var(--page-gutter);
+  }
+
+  .page-offset {
+    padding-top: var(--page-offset-top);
+    padding-bottom: var(--section-space-tight);
+  }
+
+  .section-space {
+    padding-block: var(--section-space);
+  }
+
+  .section-space-tight {
+    padding-block: var(--section-space-tight);
+  }
+
+  .stack-sm > * + * {
+    margin-top: var(--stack-sm);
+  }
+
+  .stack-md > * + * {
+    margin-top: var(--stack-md);
+  }
+
+  .stack-lg > * + * {
+    margin-top: var(--stack-lg);
+  }
+
+  .card-pad {
+    padding: var(--card-pad);
+  }
+
+  .card-pad-lg {
+    padding: var(--card-pad-lg);
+  }
+
+  .eyebrow {
+    font-size: var(--text-eyebrow);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  .title-display {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: var(--text-title-display);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+  }
+
+  .title-section {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: var(--text-title-section);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .title-card {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: var(--text-title-card);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .lead {
+    font-size: var(--text-body-lg);
+    line-height: 1.6;
+  }
+
+  .body-copy {
+    font-size: var(--text-body);
+    line-height: 1.75;
+  }
+
+  .legal-prose {
+    color: var(--fund-muted);
+  }
+
+  .legal-prose > * + * {
+    margin-top: var(--stack-lg);
+  }
+
+  .legal-prose section > * + * {
+    margin-top: var(--stack-sm);
+  }
+
+  .legal-prose h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(1.85rem, 1vw + 1.6rem, 2.35rem);
+    font-weight: 600;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    color: var(--fund-ink);
+  }
+
+  .legal-prose h3 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(1.35rem, 0.7vw + 1.18rem, 1.75rem);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--fund-ink);
+  }
+
+  .legal-prose p,
+  .legal-prose li {
+    font-size: var(--text-body);
+    line-height: 1.8;
+    color: var(--fund-muted);
+  }
+
+  .legal-prose ul {
+    margin-left: 1.25rem;
+    list-style: disc;
+    padding-left: 0.25rem;
+  }
+
+  .legal-prose strong {
+    color: var(--fund-ink);
+    font-weight: 600;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

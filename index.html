@@ -1,0 +1,34 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Сайт Фонда школы 91</title>
+      <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
+      <script>
+        (function () {
+          const params = new URLSearchParams(window.location.search);
+          const redirectedPath = params.get("p");
+          const redirectedHash = params.get("h");
+
+          if (!redirectedPath) {
+            return;
+          }
+
+          const basePath = window.location.pathname.endsWith("/")
+            ? window.location.pathname.slice(0, -1)
+            : window.location.pathname;
+
+          const nextUrl = `${basePath}${redirectedPath}${redirectedHash ? `#${redirectedHash}` : ""}`;
+          window.history.replaceState(null, "", nextUrl);
+        })();
+      </script>
+    </head>
+
+    <body>
+      <div id="root"></div>
+      <script type="module" src="/src/main.tsx"></script>
+    </body>
+  </html>
+  
