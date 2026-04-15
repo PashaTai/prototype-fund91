@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router";
 import logoMark from "../../imports/91_cdr4_1_2000_1_150_1_[Vectorized].svg";
 
 const sectionLinks = [
@@ -15,6 +16,25 @@ const docsLinks = [
 ];
 
 export function Navigation() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [menuOpen]);
+
   return (
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-fund-line bg-white/82 backdrop-blur-xl">
       <div className="page-shell">
@@ -60,43 +80,118 @@ export function Navigation() {
             ))}
           </div>
 
-          <Link
-            to="/#donate"
-            className="button-pill button-pill-primary hidden sm:inline-flex"
-          >
-            Поддержать
-          </Link>
-        </div>
-
-        <div className="scrollbar-hide flex gap-5 overflow-x-auto pb-4 lg:hidden">
-          {sectionLinks.map((link) => (
+          <div className="flex items-center gap-3">
             <Link
-              key={link.label}
-              to={link.to}
-              className="nav-link whitespace-nowrap"
+              to="/#donate"
+              className="button-pill button-pill-primary hidden lg:inline-flex"
             >
-              {link.label}
+              Поддержать
             </Link>
-          ))}
 
-          {docsLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.to}
-              className="nav-link whitespace-nowrap"
+            <button
+              type="button"
+              className="icon-button lg:hidden"
+              aria-controls="mobile-navigation"
+              aria-expanded={menuOpen}
+              aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
+              onClick={() => setMenuOpen((open) => !open)}
             >
-              {link.label}
-            </Link>
-          ))}
-
-          <Link
-            to="/#donate"
-            className="nav-link whitespace-nowrap text-fund-accent"
-          >
-            Поддержать
-          </Link>
+              {menuOpen ? (
+                <svg
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              ) : (
+                <svg
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 7h16" />
+                  <path d="M4 12h16" />
+                  <path d="M4 17h16" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </div>
+
+      {menuOpen ? (
+        <div className="lg:hidden">
+          <button
+            type="button"
+            className="mobile-nav-scrim fixed inset-0 top-[5.4rem]"
+            aria-label="Закрыть меню"
+            onClick={() => setMenuOpen(false)}
+          />
+
+          <div className="page-shell relative">
+            <div
+              id="mobile-navigation"
+              className="surface-panel card-pad relative mt-1 max-h-[calc(100svh-6.75rem)] overflow-y-auto"
+            >
+              <div className="stack-md">
+                <div className="stack-sm">
+                  <p className="eyebrow text-fund-muted">Навигация</p>
+                  <div className="grid gap-3">
+                    {sectionLinks.map((link) => (
+                      <Link
+                        key={link.label}
+                        to={link.to}
+                        className="mobile-nav-link"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        <span>{link.label}</span>
+                        <span aria-hidden="true">↗</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="stack-sm border-t border-fund-line pt-4">
+                  <p className="eyebrow text-fund-muted">Документы</p>
+                  <div className="grid gap-3">
+                    {docsLinks.map((link) => (
+                      <Link
+                        key={link.label}
+                        to={link.to}
+                        className="mobile-nav-link"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        <span>{link.label}</span>
+                        <span aria-hidden="true">↗</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                <Link
+                  to="/#donate"
+                  className="button-pill button-pill-primary w-full"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Поддержать
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </nav>
   );
 }
