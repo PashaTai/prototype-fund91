@@ -20,7 +20,7 @@ export function Navigation() {
       <div className="page-shell">
         <div className="flex items-center justify-between gap-4 py-4">
           <Link to="/" className="flex min-w-0 items-center gap-3">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-fund-line bg-fund-surface shadow-[0_14px_36px_rgba(31,50,71,0.12)]">
+            <span className="surface-card-soft flex h-12 w-12 shrink-0 items-center justify-center">
               <img
                 src={logoMark}
                 alt="Фонд Школы 91"
@@ -32,7 +32,7 @@ export function Navigation() {
               <span className="eyebrow block text-fund-muted">
                 Сообщество и развитие школы
               </span>
-              <span className="block truncate font-serif text-xl font-semibold text-fund-ink sm:text-2xl">
+              <span className="brand-name block truncate text-fund-ink">
                 Фонд Школы 91
               </span>
             </span>
@@ -43,7 +43,7 @@ export function Navigation() {
               <Link
                 key={link.label}
                 to={link.to}
-                className="text-sm font-medium text-fund-muted transition hover:text-fund-accent"
+                className="nav-link"
               >
                 {link.label}
               </Link>
@@ -53,7 +53,7 @@ export function Navigation() {
               <Link
                 key={link.label}
                 to={link.to}
-                className="text-sm font-medium text-fund-muted transition hover:text-fund-accent"
+                className="nav-link"
               >
                 {link.label}
               </Link>
@@ -62,7 +62,7 @@ export function Navigation() {
 
           <Link
             to="/#donate"
-            className="hidden rounded-full bg-fund-accent px-5 py-3 text-sm font-medium text-white shadow-[0_14px_28px_rgba(45,78,111,0.25)] transition hover:bg-fund-accent-strong sm:inline-flex"
+            className="button-pill button-pill-primary hidden sm:inline-flex"
           >
             Поддержать
           </Link>
@@ -73,7 +73,7 @@ export function Navigation() {
             <Link
               key={link.label}
               to={link.to}
-              className="whitespace-nowrap text-sm font-medium text-fund-muted transition hover:text-fund-accent"
+              className="nav-link whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -83,7 +83,7 @@ export function Navigation() {
             <Link
               key={link.label}
               to={link.to}
-              className="whitespace-nowrap text-sm font-medium text-fund-muted transition hover:text-fund-accent"
+              className="nav-link whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -91,7 +91,7 @@ export function Navigation() {
 
           <Link
             to="/#donate"
-            className="whitespace-nowrap text-sm font-medium text-fund-accent"
+            className="nav-link whitespace-nowrap text-fund-accent"
           >
             Поддержать
           </Link>

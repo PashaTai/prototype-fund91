@@ -53,7 +53,7 @@ export function PhotoGallery() {
             <button
               type="button"
               onClick={() => scrollToSlide(activeIndex - 1)}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-fund-line bg-white/85 text-fund-ink shadow-[0_14px_36px_rgba(31,50,71,0.10)] transition hover:border-fund-accent hover:text-fund-accent"
+              className="icon-button"
               aria-label="Предыдущий слайд"
             >
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ export function PhotoGallery() {
             <button
               type="button"
               onClick={() => scrollToSlide(activeIndex + 1)}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-fund-line bg-white/85 text-fund-ink shadow-[0_14px_36px_rgba(31,50,71,0.10)] transition hover:border-fund-accent hover:text-fund-accent"
+              className="icon-button"
               aria-label="Следующий слайд"
             >
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ export function PhotoGallery() {
               key={item.title}
               className="min-w-full snap-start"
             >
-              <div className="page-shell overflow-hidden rounded-[2.2rem] border border-fund-line bg-white/85 shadow-[0_24px_90px_rgba(31,50,71,0.12)]">
+              <div className="page-shell surface-panel overflow-hidden">
                 <div className="relative">
                   <ImageWithFallback
                     src={item.image}
@@ -94,7 +94,7 @@ export function PhotoGallery() {
                     className="h-[24rem] w-full object-cover sm:h-[30rem] lg:h-[38rem]"
                   />
                   <div className="card-pad-lg absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#172739]/88 via-[#172739]/45 to-transparent">
-                    <span className="inline-flex rounded-full border border-white/25 bg-white/12 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm">
+                    <span className="badge-chip badge-chip-inverse">
                       {item.type}
                     </span>
                     <h3 className="title-card mt-[var(--stack-md)] max-w-3xl text-white">

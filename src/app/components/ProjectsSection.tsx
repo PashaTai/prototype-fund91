@@ -22,7 +22,7 @@ export function ProjectsSection() {
           {featuredProjects.map((project) => (
             <div
               key={project.title}
-              className="group overflow-hidden rounded-[1.8rem] border border-fund-line bg-white/80 shadow-[0_18px_60px_rgba(31,50,71,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(31,50,71,0.11)]"
+              className="surface-card group overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(31,50,71,0.11)]"
             >
               <div className="relative overflow-hidden">
                 <ImageWithFallback
@@ -31,10 +31,10 @@ export function ProjectsSection() {
                   className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5">
-                  <span className="rounded-full border border-white/70 bg-white/82 px-3 py-1 text-xs uppercase tracking-[0.18em] text-fund-ink backdrop-blur-sm">
+                  <span className="badge-chip badge-chip-light">
                     {project.tag}
                   </span>
-                  <span className="rounded-full border border-white/70 bg-white/82 px-3 py-1 text-xs font-medium text-fund-ink backdrop-blur-sm">
+                  <span className="badge-chip badge-chip-light tracking-normal normal-case">
                     {project.year}
                   </span>
                 </div>

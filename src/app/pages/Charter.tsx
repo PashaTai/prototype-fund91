@@ -102,7 +102,7 @@ export function Charter() {
             </p>
           </section>
 
-          <div className="card-pad rounded-[1.5rem] border border-fund-line bg-fund-surface">
+          <div className="surface-card-soft card-pad">
             <h3>Реквизиты Фонда</h3>
             <div className="stack-sm">
               <p><strong>ИНН:</strong> 7700000000</p>

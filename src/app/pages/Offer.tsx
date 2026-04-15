@@ -11,7 +11,7 @@ export function Offer() {
           <h1 className="title-section text-fund-ink">Публичная оферта</h1>
 
           {selectedAmount ? (
-            <div className="card-pad rounded-[1.5rem] border border-fund-line bg-white/80 text-fund-muted shadow-[0_16px_50px_rgba(31,50,71,0.08)]">
+            <div className="surface-card card-pad text-fund-muted">
               Вы выбрали сумму пожертвования:{" "}
               <span className="font-medium text-fund-ink">
                 {Number(selectedAmount).toLocaleString("ru-RU")} ₽
@@ -105,7 +105,7 @@ export function Offer() {
 
           <section className="stack-sm">
             <h2>6. Реквизиты Фонда</h2>
-            <div className="card-pad rounded-[1.4rem] border border-fund-line bg-fund-surface">
+            <div className="surface-card-soft card-pad">
               <p>
                 <strong>Полное наименование:</strong> Благотворительный фонд "Школа 91"
               </p>
@@ -127,7 +127,7 @@ export function Offer() {
             </div>
           </section>
 
-          <div className="card-pad rounded-[1.5rem] border border-fund-line bg-fund-surface">
+          <div className="surface-card-soft card-pad">
             <p>
               Настоящая оферта вступает в силу с момента её размещения на сайте Фонда
               и действует до момента её отзыва Фондом. Фонд вправе внести изменения в условия

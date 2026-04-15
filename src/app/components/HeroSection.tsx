@@ -1,6 +1,6 @@
 import { DonationForm } from "./DonationForm";
 import { ImageWithFallback } from "./ImageWithFallback";
-import schoolHeroImage from "../../assets/uploads/school-hero.jpeg";
+import schoolHeroImage from "../../assets/uploads/school-hero-new.jpeg";
 
 export function HeroSection() {
   return (
@@ -21,7 +21,7 @@ export function HeroSection() {
             <h1 className="title-display text-white">
               Вместе создаём
               <br />
-              <span className="text-[#2a37e2]">
+              <span className="italic text-white">
                 будущее
               </span>
             </h1>
@@ -32,7 +32,7 @@ export function HeroSection() {
             </p>
           </div>
 
-          <div className="card-pad-lg rounded-[2rem] border border-white/18 bg-white/94 shadow-[0_30px_90px_rgba(2,4,46,0.28)] backdrop-blur-md">
+          <div className="surface-panel card-pad-lg border-white/18 bg-white/94 backdrop-blur-md">
             <DonationForm />
           </div>
         </div>

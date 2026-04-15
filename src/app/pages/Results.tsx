@@ -14,7 +14,7 @@ export function Results() {
   return (
     <div className="page-offset">
       <div className="page-shell stack-lg">
-        <section className="card-pad-lg overflow-hidden rounded-[2.35rem] border border-fund-line bg-white/82 shadow-[0_24px_90px_rgba(31,50,71,0.12)]">
+        <section className="surface-panel card-pad-lg overflow-hidden">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <div className="stack-md">
               <p className="eyebrow text-fund-muted">
@@ -31,7 +31,7 @@ export function Results() {
             <div className="lg:justify-self-end">
               <Link
                 to="/#goals"
-                className="inline-flex items-center gap-3 rounded-full border border-fund-line bg-fund-surface px-5 py-3 text-sm font-medium text-fund-ink transition hover:border-fund-accent hover:text-fund-accent"
+                className="button-pill button-pill-secondary"
               >
                 Вернуться к блоку целей
                 <span aria-hidden="true">↗</span>
@@ -43,12 +43,12 @@ export function Results() {
             {resultsPageContent.metrics.map((metric) => (
               <article
                 key={metric.label}
-                className="card-pad rounded-[1.55rem] border border-fund-line bg-fund-surface"
+                className="surface-card-soft card-pad"
               >
-                <div className="font-serif text-3xl font-semibold text-fund-ink sm:text-4xl">
+                <div className="metric-value text-fund-ink">
                   {metric.value}
                 </div>
-                <p className="mt-2 text-sm leading-6 text-fund-muted">
+                <p className="metric-label mt-2">
                   {metric.label}
                 </p>
               </article>
@@ -57,7 +57,7 @@ export function Results() {
         </section>
 
         <section className="grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
-          <article className="card-pad-lg rounded-[2rem] border border-fund-line bg-white/82 shadow-[0_20px_70px_rgba(31,50,71,0.09)]">
+          <article className="surface-panel card-pad-lg">
             <p className="eyebrow text-fund-muted">
               Диаграмма 01
             </p>
@@ -88,7 +88,7 @@ export function Results() {
               {resultsPageContent.distribution.map((item) => (
                 <div
                   key={item.label}
-                  className="card-pad grid gap-3 rounded-[1.35rem] border border-fund-line bg-fund-surface sm:grid-cols-[auto_1fr_auto]"
+                  className="surface-card-soft card-pad grid gap-3 sm:grid-cols-[auto_1fr_auto]"
                 >
                   <span
                     className="mt-1 h-3 w-3 rounded-full"
@@ -96,9 +96,9 @@ export function Results() {
                   />
                   <div>
                     <div className="font-medium text-fund-ink">{item.label}</div>
-                    <div className="mt-1 text-sm text-fund-muted">{item.amount}</div>
+                    <div className="meta-text mt-1 text-fund-muted">{item.amount}</div>
                   </div>
-                  <div className="text-sm font-medium text-fund-accent">
+                  <div className="meta-text font-medium text-fund-accent">
                     {item.value}%
                   </div>
                 </div>
@@ -106,7 +106,7 @@ export function Results() {
             </div>
           </article>
 
-          <article className="card-pad-lg rounded-[2rem] border border-fund-line bg-white/82 shadow-[0_20px_70px_rgba(31,50,71,0.09)]">
+          <article className="surface-panel card-pad-lg">
             <p className="eyebrow text-fund-muted">
               Диаграмма 02
             </p>
@@ -121,7 +121,7 @@ export function Results() {
             <div className="mt-[var(--stack-lg)] space-y-5">
               {resultsPageContent.reach.map((item) => (
                 <div key={item.label}>
-                  <div className="mb-2 flex items-center justify-between gap-4 text-sm">
+                  <div className="meta-text mb-2 flex items-center justify-between gap-4">
                     <span className="font-medium text-fund-ink">{item.label}</span>
                     <span className="text-fund-muted">
                       {item.value} {item.suffix}
@@ -143,7 +143,7 @@ export function Results() {
           {resultsPageContent.highlights.map((item) => (
             <article
               key={item.title}
-              className="card-pad rounded-[1.8rem] border border-fund-line bg-white/82 shadow-[0_18px_60px_rgba(31,50,71,0.08)]"
+              className="surface-card card-pad"
             >
               <p className="eyebrow text-fund-muted">
                 Итог
@@ -158,7 +158,7 @@ export function Results() {
           ))}
         </section>
 
-        <section className="card-pad-lg rounded-[2rem] border border-fund-line bg-white/82 shadow-[0_20px_70px_rgba(31,50,71,0.09)]">
+        <section className="surface-panel card-pad-lg">
           <p className="eyebrow text-fund-muted">
             Текстовые итоги
           </p>
@@ -166,7 +166,7 @@ export function Results() {
             {resultsPageContent.notes.map((item) => (
               <article
                 key={item.title}
-                className="card-pad rounded-[1.5rem] border border-fund-line bg-fund-surface"
+                className="surface-card-soft card-pad"
               >
                 <h2 className="title-card text-fund-ink">
                   {item.title}

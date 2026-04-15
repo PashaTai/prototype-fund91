@@ -14,7 +14,7 @@ function TestimonialAvatar({
 }) {
   if (avatarMode === "photo" && image) {
     return (
-      <div className="h-16 w-16 overflow-hidden rounded-full border border-white/25 bg-white/12 shadow-[0_10px_24px_rgba(7,11,112,0.18)]">
+      <div className="avatar-frame">
         <ImageWithFallback
           src={image}
           alt={name}
@@ -25,7 +25,7 @@ function TestimonialAvatar({
   }
 
   return (
-    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/25 bg-white/12 shadow-[0_10px_24px_rgba(7,11,112,0.18)]">
+    <div className="avatar-frame flex items-center justify-center">
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -61,7 +61,7 @@ export function TestimonialsSection() {
             {fundTestimonials.map((item) => (
               <article
                 key={item.name}
-                className="card-pad flex h-full flex-col rounded-[1.6rem] border border-white/14 bg-white/8 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm"
+                className="surface-card-inverse card-pad flex h-full flex-col backdrop-blur-sm"
               >
                 <div className="flex items-center gap-4">
                   <TestimonialAvatar
@@ -71,10 +71,10 @@ export function TestimonialsSection() {
                     avatarClass={item.avatarClass}
                   />
                   <div className="min-w-0">
-                    <div className="text-lg font-semibold leading-tight text-white">
+                    <div className="detail-title text-white">
                       {item.name}
                     </div>
-                    <div className="mt-1 text-sm leading-6 text-white/72">
+                    <div className="meta-text mt-1 text-white/72">
                       {item.role}
                     </div>
                   </div>

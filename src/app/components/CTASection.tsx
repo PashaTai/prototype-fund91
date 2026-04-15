@@ -4,7 +4,7 @@ export function CTASection() {
   return (
     <section id="donate" className="pb-[var(--section-space)] pt-[var(--stack-lg)]">
       <div className="page-shell">
-        <div className="overflow-hidden rounded-[2.2rem] border border-fund-line bg-white/84 shadow-[0_28px_90px_rgba(31,50,71,0.12)]">
+        <div className="surface-panel overflow-hidden">
           <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
             <div className="card-pad-lg bg-fund-deep text-white">
               <p className="eyebrow text-white/60">
@@ -20,15 +20,15 @@ export function CTASection() {
               </p>
 
               <div className="mt-[var(--stack-lg)] space-y-4">
-                <div className="card-pad rounded-[1.35rem] border border-white/12 bg-white/8">
-                  <div className="text-lg font-medium">Прозрачная логика поддержки</div>
+                <div className="surface-card-inverse card-pad">
+                  <div className="detail-title text-white">Прозрачная логика поддержки</div>
                   <div className="body-copy mt-1 text-white/68">
                     У каждого направления есть понятная цель, а у пожертвования — видимый
                     результат.
                   </div>
                 </div>
-                <div className="card-pad rounded-[1.35rem] border border-white/12 bg-white/8">
-                  <div className="text-lg font-medium">Помощь школе в реальном времени</div>
+                <div className="surface-card-inverse card-pad">
+                  <div className="detail-title text-white">Помощь школе в реальном времени</div>
                   <div className="body-copy mt-1 text-white/68">
                     Фонд даёт возможность быстрее запускать изменения без долгого ожидания.
                   </div>

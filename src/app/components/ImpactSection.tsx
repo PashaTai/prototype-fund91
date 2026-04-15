@@ -24,7 +24,7 @@ export function ImpactSection() {
           {impactItems.map((item) => (
             <article
               key={item.number}
-              className="card-pad-lg rounded-[1.75rem] border border-fund-line bg-white/82 shadow-[0_18px_60px_rgba(31,50,71,0.08)] backdrop-blur-sm"
+              className="surface-card card-pad-lg backdrop-blur-sm"
             >
               <div className="flex items-start justify-between gap-6">
                 <div>
@@ -32,7 +32,7 @@ export function ImpactSection() {
                     {item.title}
                   </h3>
                 </div>
-                <span className="font-serif text-4xl text-fund-accent sm:text-5xl">
+                <span className="metric-value text-fund-accent">
                   {item.number}
                 </span>
               </div>

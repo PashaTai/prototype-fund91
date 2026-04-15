@@ -1,5 +1,7 @@
 import { Link } from "react-router";
 
+const legalName = "Фонд поддержки и содействия развитию образовательной, научной, просветительской деятельности ГБОУ Школа № 91 и инициатив учеников «Фонд 91»";
+
 export function AboutSection() {
   return (
     <section id="about" className="section-space">
@@ -27,11 +29,16 @@ export function AboutSection() {
                 Наша миссия — создать условия, в которых каждый ученик сможет раскрыть свой
                 потенциал и получить качественное современное образование.
               </p>
+              <p>
+                Полное наименование фонда — {legalName}. Регистрационные данные фонда:
+                ИНН / КПП 9714082742 / 771401001, ОГРН 1257700467232, дата регистрации —
+                23 октября 2025 года, президент фонда — Сушко Станислав Львович.
+              </p>
             </div>
           </div>
 
           <div className="grid gap-5 self-start sm:grid-cols-2">
-            <div className="card-pad-lg stack-sm rounded-[1.85rem] border border-fund-line bg-white/82 shadow-[0_18px_60px_rgba(31,50,71,0.08)] sm:col-span-2">
+            <div className="surface-panel card-pad-lg stack-sm sm:col-span-2">
               <p className="eyebrow text-fund-muted">
                 Подход фонда
               </p>
@@ -44,15 +51,15 @@ export function AboutSection() {
               </p>
             </div>
 
-            <div className="card-pad stack-sm rounded-[1.75rem] bg-fund-deep text-white shadow-[0_22px_70px_rgba(23,37,53,0.18)]">
+            <div className="surface-card-accent card-pad stack-sm">
               <h3 className="title-card text-white">Прозрачность</h3>
               <p className="body-copy text-white/72">
-                Финансовые отчёты и приоритеты фонда должны быть понятны каждому участнику
-                сообщества.
+                Фонд публикует финансовые отчёты и сохраняет прямую связь между
+                пожертвованием, действием и видимым результатом для школы.
               </p>
             </div>
 
-            <div className="card-pad stack-sm rounded-[1.75rem] border border-fund-line bg-fund-surface shadow-[0_18px_55px_rgba(31,50,71,0.08)]">
+            <div className="surface-card-soft card-pad stack-sm shadow-[0_18px_55px_rgba(31,50,71,0.08)]">
               <h3 className="title-card text-fund-ink">
                 Сообщество
               </h3>
@@ -65,24 +72,24 @@ export function AboutSection() {
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
-          <div className="card-pad rounded-[1.4rem] border border-fund-line bg-white/75 text-center shadow-[0_14px_40px_rgba(31,50,71,0.07)]">
-            <div className="font-serif text-3xl font-semibold text-fund-accent">20+</div>
-            <div className="mt-1 text-sm text-fund-muted">проектов</div>
+          <div className="surface-card card-pad text-center shadow-[0_14px_40px_rgba(31,50,71,0.07)]">
+            <div className="metric-value text-fund-accent">20+</div>
+            <div className="metric-label mt-1">проектов</div>
           </div>
-          <div className="card-pad rounded-[1.4rem] border border-fund-line bg-white/75 text-center shadow-[0_14px_40px_rgba(31,50,71,0.07)]">
-            <div className="font-serif text-3xl font-semibold text-fund-accent">500+</div>
-            <div className="mt-1 text-sm text-fund-muted">благотворителей</div>
+          <div className="surface-card card-pad text-center shadow-[0_14px_40px_rgba(31,50,71,0.07)]">
+            <div className="metric-value text-fund-accent">500+</div>
+            <div className="metric-label mt-1">благотворителей</div>
           </div>
-          <div className="card-pad rounded-[1.4rem] border border-fund-line bg-white/75 text-center shadow-[0_14px_40px_rgba(31,50,71,0.07)]">
-            <div className="font-serif text-3xl font-semibold text-fund-accent">20М+</div>
-            <div className="mt-1 text-sm text-fund-muted">рублей собрано</div>
+          <div className="surface-card card-pad text-center shadow-[0_14px_40px_rgba(31,50,71,0.07)]">
+            <div className="metric-value text-fund-accent">20М+</div>
+            <div className="metric-label mt-1">рублей собрано</div>
           </div>
         </div>
 
         <div className="mt-[var(--stack-lg)] flex justify-center">
           <Link
             to="/results"
-            className="inline-flex items-center gap-3 rounded-full bg-fund-accent px-6 py-3 text-sm font-medium text-white shadow-[0_16px_34px_rgba(5,7,176,0.22)] transition hover:bg-fund-accent-strong"
+            className="button-pill button-pill-primary"
           >
             Подробнее о результатах
             <span aria-hidden="true">↗</span>
